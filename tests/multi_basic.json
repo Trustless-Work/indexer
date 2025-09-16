@@ -1,0 +1,37 @@
+{
+  "contractId": "MULTI001BASICTEST123456789ABCDEF",
+  "contractBaseId": "BASE004EXAMPLE123456789ABCDEF",
+  "signer": "GASIGNER444444444444444444444444444444444444444444444444",
+  "engagementId": "engagement_multi_001",
+  "title": "Basic Multi Release Test", 
+  "description": "Simple multi milestone escrow for testing basic functionality",
+  "roles": {
+    "approver": "GAAPPROVER444444444444444444444444444444444444444444444",
+    "serviceProvider": "GASERVICE444444444444444444444444444444444444444444444",
+    "platformAddress": "GAPLATFORM444444444444444444444444444444444444444444444",
+    "releaseSigner": "GARELEASE444444444444444444444444444444444444444444444",
+    "disputeResolver": "GADISPUTE444444444444444444444444444444444444444444444",
+    "receiver": "GARECEIVER444444444444444444444444444444444444444444444"
+  },
+  "platformFee": 100,
+  "milestones": [
+    {
+      "description": "Phase 1: Research and Planning",
+      "amount": 300000000
+    },
+    {
+      "description": "Phase 2: Development and Implementation", 
+      "amount": 500000000
+    },
+    {
+      "description": "Phase 3: Testing and Documentation",
+      "amount": 200000000
+    }
+  ],
+  "trustline": {
+    "address": "CUSDC6STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 6,
+    "name": "USD Coin"
+  },
+  "receiverMemo": 4001
+}

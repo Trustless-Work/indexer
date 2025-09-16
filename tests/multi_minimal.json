@@ -1,0 +1,33 @@
+{
+  "contractId": "MULTI003MINIMAL123456789ABCDEF",
+  "contractBaseId": "BASE006EXAMPLE123456789ABCDEF", 
+  "signer": "GASIGNER666666666666666666666666666666666666666666666666",
+  "engagementId": "engagement_minimal_003",
+  "title": "Minimal Multi Release",
+  "description": "Testing minimal multi-milestone configuration",
+  "roles": {
+    "approver": "GAAPPROVER666666666666666666666666666666666666666666666",
+    "serviceProvider": "GASERVICE666666666666666666666666666666666666666666666",
+    "platformAddress": "GAPLATFORM666666666666666666666666666666666666666666666",
+    "releaseSigner": "GARELEASE666666666666666666666666666666666666666666666",
+    "disputeResolver": "GADISPUTE666666666666666666666666666666666666666666666",
+    "receiver": "GARECEIVER666666666666666666666666666666666666666666666"
+  },
+  "platformFee": 1,
+  "milestones": [
+    {
+      "description": "Task A",
+      "amount": 50
+    },
+    {
+      "description": "Task B",
+      "amount": 50
+    }
+  ],
+  "trustline": {
+    "address": "CTEST2STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 2,
+    "name": "Test Coin"
+  },
+  "receiverMemo": 6003
+}

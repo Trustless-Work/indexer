@@ -12,24 +12,25 @@ type sqlRepo struct{ db *pgxpool.Pool }
 func NewSQLRepository(db *pgxpool.Pool) Repository { return &sqlRepo{db} }
 
 func (r *sqlRepo) Upsert(ctx context.Context, d FunderDeposit) (string, error) {
-	const q = `
-INSERT INTO escrow_funder_deposits
-  (contract_id, depositor, amount_raw, occurred_at, external_id, tx_hash, ledger_sequence, op_index, metadata)
-VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
-ON CONFLICT (contract_id, external_id) DO UPDATE SET
-  depositor=EXCLUDED.depositor,
-  amount_raw=EXCLUDED.amount_raw,
-  occurred_at=EXCLUDED.occurred_at,
-  tx_hash=EXCLUDED.tx_hash,
-  ledger_sequence=EXCLUDED.ledger_sequence,
-  op_index=EXCLUDED.op_index,
-  metadata=EXCLUDED.metadata
-`
-	_, err := r.db.Exec(ctx, q,
+	// Use stored procedure for better validation and consistency
+	var result map[string]any
+	err := r.db.QueryRow(ctx, `
+		SELECT sp_insert_funder_deposit($1, $2, $3, $4, $5, $6, $7, $8, $9)
+	`,
 		d.ContractID, d.Depositor, d.AmountRaw, d.OccurredAt,
 		d.ExternalID, d.TxHash, d.LedgerSequence, d.OpIndex, d.Metadata,
-	)
-	return "upserted", err
+	).Scan(&result)
+	
+	if err != nil {
+		return "", err
+	}
+	
+	// Extract insert_id from result if available
+	if insertID, ok := result["insert_id"]; ok {
+		return insertID.(string), nil
+	}
+	
+	return "upserted", nil
 }
 
 func (r *sqlRepo) ListByContract(ctx context.Context, contractID string, limit int) ([]FunderDeposit, error) {

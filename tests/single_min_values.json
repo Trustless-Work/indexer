@@ -1,0 +1,32 @@
+{
+  "contractId": "SINGLE003MINVALUES123456789ABCDEF",
+  "contractBaseId": "BASE003EXAMPLE123456789ABCDEF",
+  "signer": "GASIGNER333333333333333333333333333333333333333333333333",
+  "engagementId": "engagement_min_003",
+  "title": "Minimal Values Test",
+  "description": "Testing with minimal values and edge cases",
+  "roles": {
+    "approver": "GAAPPROVER333333333333333333333333333333333333333333333",
+    "serviceProvider": "GASERVICE333333333333333333333333333333333333333333333",
+    "platformAddress": "GAPLATFORM333333333333333333333333333333333333333333333", 
+    "releaseSigner": "GARELEASE333333333333333333333333333333333333333333333",
+    "disputeResolver": "GADISPUTE333333333333333333333333333333333333333333333",
+    "receiver": "GARECEIVER333333333333333333333333333333333333333333333"
+  },
+  "amountRaw": 1,
+  "balanceRaw": 1,
+  "amount": 1,
+  "balance": 1,
+  "platformFee": 0,
+  "milestones": [
+    {
+      "description": "Minimal task"
+    }
+  ],
+  "trustline": {
+    "address": "CTEST1STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 0,
+    "name": "Test Token"
+  },
+  "receiverMemo": 0
+}

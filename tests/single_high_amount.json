@@ -1,0 +1,32 @@
+{
+  "contractId": "SINGLE002HIGHAMOUNT123456789ABCDEF",
+  "contractBaseId": "BASE002EXAMPLE123456789ABCDEF",
+  "signer": "GASIGNER222222222222222222222222222222222222222222222222",
+  "engagementId": "engagement_high_002", 
+  "title": "High Amount Single Release",
+  "description": "Testing with very high amounts to verify NUMERIC(39,0) handling",
+  "roles": {
+    "approver": "GAAPPROVER222222222222222222222222222222222222222222222",
+    "serviceProvider": "GASERVICE222222222222222222222222222222222222222222222",
+    "platformAddress": "GAPLATFORM222222222222222222222222222222222222222222222",
+    "releaseSigner": "GARELEASE222222222222222222222222222222222222222222222",
+    "disputeResolver": "GADISPUTE222222222222222222222222222222222222222222222",
+    "receiver": "GARECEIVER222222222222222222222222222222222222222222222"
+  },
+  "amountRaw": 999999999999999999,
+  "balanceRaw": 999999999999999999,
+  "amount": 999999999999999999,
+  "balance": 999999999999999999,
+  "platformFee": 500,
+  "milestones": [
+    {
+      "description": "High-value project completion with detailed requirements and deliverables"
+    }
+  ],
+  "trustline": {
+    "address": "CBTC7STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 8,
+    "name": "Bitcoin"
+  },
+  "receiverMemo": 2002
+}

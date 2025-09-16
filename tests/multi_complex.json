@@ -1,0 +1,53 @@
+{
+  "contractId": "MULTI002COMPLEX123456789ABCDEF",
+  "contractBaseId": "BASE005EXAMPLE123456789ABCDEF",
+  "signer": "GASIGNER555555555555555555555555555555555555555555555555",
+  "engagementId": "engagement_complex_002",
+  "title": "Complex Multi-Milestone Project",
+  "description": "Advanced multi-phase project with varying milestone values and detailed requirements",
+  "roles": {
+    "approver": "GAAPPROVER555555555555555555555555555555555555555555555",
+    "serviceProvider": "GASERVICE555555555555555555555555555555555555555555555",
+    "platformAddress": "GAPLATFORM555555555555555555555555555555555555555555555",
+    "releaseSigner": "GARELEASE555555555555555555555555555555555555555555555",
+    "disputeResolver": "GADISPUTE555555555555555555555555555555555555555555555",
+    "receiver": "GARECEIVER555555555555555555555555555555555555555555555"
+  },
+  "platformFee": 750,
+  "milestones": [
+    {
+      "description": "Initial Discovery and Requirements Gathering - Comprehensive analysis of project scope",
+      "amount": 150000000
+    },
+    {
+      "description": "System Architecture Design - Technical specifications and system blueprints",
+      "amount": 200000000
+    },
+    {
+      "description": "Core Development Phase 1 - Backend infrastructure and database design",
+      "amount": 400000000
+    },
+    {
+      "description": "Core Development Phase 2 - Frontend implementation and API integration",
+      "amount": 400000000
+    },
+    {
+      "description": "Quality Assurance and Testing - Comprehensive testing and bug fixes",
+      "amount": 250000000
+    },
+    {
+      "description": "Documentation and Knowledge Transfer - Complete documentation and training",
+      "amount": 100000000
+    },
+    {
+      "description": "Production Deployment and Support - Go-live support and monitoring",
+      "amount": 50000000
+    }
+  ],
+  "trustline": {
+    "address": "CETH8STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 18,
+    "name": "Ethereum"
+  },
+  "receiverMemo": 5002
+}

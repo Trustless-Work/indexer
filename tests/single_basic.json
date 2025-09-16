@@ -1,0 +1,32 @@
+{
+  "contractId": "SINGLE001BASICTEST123456789ABCDEF",
+  "contractBaseId": "BASE001EXAMPLE123456789ABCDEF", 
+  "signer": "GASIGNER111111111111111111111111111111111111111111111111",
+  "engagementId": "engagement_basic_001",
+  "title": "Basic Single Release Test",
+  "description": "Simple single milestone escrow for testing basic functionality",
+  "roles": {
+    "approver": "GAAPPROVER111111111111111111111111111111111111111111111",
+    "serviceProvider": "GASERVICE111111111111111111111111111111111111111111111",
+    "platformAddress": "GAPLATFORM111111111111111111111111111111111111111111111",
+    "releaseSigner": "GARELEASE111111111111111111111111111111111111111111111",
+    "disputeResolver": "GADISPUTE111111111111111111111111111111111111111111111",
+    "receiver": "GARECEIVER111111111111111111111111111111111111111111111"
+  },
+  "amountRaw": 1000000000,
+  "balanceRaw": 1000000000,
+  "amount": 1000000000,
+  "balance": 1000000000,
+  "platformFee": 250,
+  "milestones": [
+    {
+      "description": "Complete project delivery"
+    }
+  ],
+  "trustline": {
+    "address": "CUSDC6STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 6,
+    "name": "USD Coin"
+  },
+  "receiverMemo": 1001
+}

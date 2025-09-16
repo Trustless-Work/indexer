@@ -12,7 +12,7 @@ import (
 	"github.com/joho/godotenv"
 
 	"github.com/Trustless-Work/indexer/internal/db"
-	"github.com/Trustless-Work/indexer/internal/db/migrate"
+	// "github.com/Trustless-Work/indexer/internal/db/migrate"
 	"github.com/Trustless-Work/indexer/internal/deposits"
 	"github.com/Trustless-Work/indexer/internal/escrow"
 	"github.com/Trustless-Work/indexer/internal/httpserver"
@@ -37,9 +37,10 @@ func main() {
 	defer cancel()
 
 	log.Printf("DB_DSN=%s", dsn) // debe verse :15432/trustlesswork
-	if err := migrate.Up(ctx, dsn); err != nil {
-		log.Fatalf("migrations failed: %v", err)
-	}
+	// Skip migrations for now since DB is already restored from dump
+	// if err := migrate.Up(ctx, dsn); err != nil {
+	//	 log.Fatalf("migrations failed: %v", err)
+	// }
 
 	// RPC client
 	var rpcClient rpc.Client

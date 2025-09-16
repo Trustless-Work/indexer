@@ -1,0 +1,33 @@
+{
+  "contractId": "MULTI123456789ABCDEF123GHIJKLMNOPQRSTUVWXYZ",
+  "contractBaseId": "CDBASECONTRACT789EXAMPLE456ABCDEF123GHIJKLMNOPQRSTUVWXYZ",
+  "signer": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+  "engagementId": "engagement02",
+  "description": "Multi milestone escrow test",
+  "title": "Multi Test Title",
+  "roles": {
+    "approver": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+    "serviceProvider": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+    "platformAddress": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+    "releaseSigner": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+    "disputeResolver": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK",
+    "receiver": "GB6MP3L6UGIDY6O6MXNLSKHLXT2T2TCMPZIZGUTOGYKOLHW7EORWMFCK"
+  },
+  "platformFee": 1,
+  "milestones": [
+    {
+      "description": "First milestone",
+      "amount": 50000000
+    },
+    {
+      "description": "Second milestone", 
+      "amount": 50000000
+    }
+  ],
+  "trustline": {
+    "address": "CBIELTK6YBZJU5UP2WWQEUCYKLPU6AUNZ2BQ4WWFEIE3USCIHMXQDAMA",
+    "decimals": 7,
+    "name": "USDC"
+  },
+  "receiverMemo": 3356203
+}
