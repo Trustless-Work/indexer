@@ -12,6 +12,7 @@ import (
 	"github.com/joho/godotenv"
 
 	"github.com/Trustless-Work/indexer/internal/db"
+	"github.com/Trustless-Work/indexer/internal/db/migrate"
 	"github.com/Trustless-Work/indexer/internal/deposits"
 	"github.com/Trustless-Work/indexer/internal/escrow"
 	"github.com/Trustless-Work/indexer/internal/httpserver"
@@ -30,6 +31,15 @@ func main() {
 		log.Fatalf("db: %v", err)
 	}
 	defer pool.Close()
+
+	dsn := os.Getenv("DB_DSN")
+	ctx, cancel = context.WithTimeout(context.Background(), 60*time.Second)
+	defer cancel()
+
+	log.Printf("DB_DSN=%s", dsn) // debe verse :15432/trustlesswork
+	if err := migrate.Up(ctx, dsn); err != nil {
+		log.Fatalf("migrations failed: %v", err)
+	}
 
 	// RPC client
 	var rpcClient rpc.Client
