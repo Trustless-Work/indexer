@@ -26,9 +26,11 @@ func main() {
 	defer cancel()
 
 	// DB pool
-	pool, err := db.NewPool(ctx, db.ConfigFromEnv())
+	cfg := db.ConfigFromEnv()
+
+	pool, err := db.NewFromConfig(ctx, cfg)
 	if err != nil {
-		log.Fatalf("db: %v", err)
+		log.Fatalf("failed to create db pool: %v", err)
 	}
 	defer pool.Close()
 

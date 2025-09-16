@@ -1,0 +1,32 @@
+{
+  "contractId": "CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQAHHAGK5A2F",
+  "contractBaseId": "CDBASECONTRACT789EXAMPLE456ABCDEF123GHIJKLMNOPQRSTUVWXYZ", 
+  "signer": "GASIGNER111111111111111111111111111111111111111111111111",
+  "engagementId": "stellar_real_test_001",
+  "title": "Real Stellar Contract Test",
+  "description": "Testing with a real Stellar contract ID from testnet",
+  "roles": {
+    "approver": "GAAPPROVER111111111111111111111111111111111111111111111",
+    "serviceProvider": "GASERVICE111111111111111111111111111111111111111111111",
+    "platformAddress": "GAPLATFORM111111111111111111111111111111111111111111111",
+    "releaseSigner": "GARELEASE111111111111111111111111111111111111111111111",
+    "disputeResolver": "GADISPUTE111111111111111111111111111111111111111111111",
+    "receiver": "GARECEIVER111111111111111111111111111111111111111111111"
+  },
+  "amountRaw": 5000000000,
+  "balanceRaw": 5000000000,
+  "amount": 5000000000,
+  "balance": 5000000000,
+  "platformFee": 250,
+  "milestones": [
+    {
+      "description": "Test milestone with real Stellar contract"
+    }
+  ],
+  "trustline": {
+    "address": "CUSDC6STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 6,
+    "name": "USD Coin"
+  },
+  "receiverMemo": 7001
+}

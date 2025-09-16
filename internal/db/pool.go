@@ -29,17 +29,59 @@ func ConfigFromEnv() Config {
 	}
 }
 
-func NewPool(ctx context.Context, cfg Config) (*pgxpool.Pool, error) {
-	pconf, err := pgxpool.ParseConfig(cfg.DSN)
+func NewPool(ctx context.Context, dsn string, maxConns int32) (*pgxpool.Pool, error) {
+	cfg, err := pgxpool.ParseConfig(dsn)
 	if err != nil {
 		return nil, err
 	}
-	pconf.MaxConns = cfg.MaxConns
-	pconf.MinConns = cfg.MinConns
-	pconf.MaxConnLifetime = cfg.MaxConnLifetime
-	pconf.MaxConnIdleTime = cfg.MaxConnIdleTime
-	pconf.ConnConfig.ConnectTimeout = cfg.ConnectTimeout
-	return pgxpool.NewWithConfig(ctx, pconf)
+	if maxConns > 0 {
+		cfg.MaxConns = maxConns
+	}
+	return pgxpool.NewWithConfig(ctx, cfg)
+}
+
+func NewFromConfig(ctx context.Context, cfg Config) (*pgxpool.Pool, error) {
+	pcfg, err := pgxpool.ParseConfig(cfg.DSN)
+	if err != nil {
+		return nil, err
+	}
+	pcfg.MaxConns = cfg.MaxConns
+	pcfg.MinConns = cfg.MinConns
+	pcfg.MaxConnLifetime = cfg.MaxConnLifetime
+	pcfg.MaxConnIdleTime = cfg.MaxConnIdleTime
+	pcfg.ConnConfig.ConnectTimeout = cfg.ConnectTimeout
+
+	return pgxpool.NewWithConfig(ctx, pcfg)
+}
+
+// NUEVO: usa toda la Config (min/max conns, lifetimes, idle)
+func NewPoolWithConfig(ctx context.Context, c Config) (*pgxpool.Pool, error) {
+	cfg, err := pgxpool.ParseConfig(c.DSN)
+	if err != nil {
+		return nil, err
+	}
+	if c.MaxConns > 0 {
+		cfg.MaxConns = c.MaxConns
+	}
+	if c.MinConns > 0 {
+		cfg.MinConns = c.MinConns
+	}
+	if c.MaxConnLifetime > 0 {
+		cfg.MaxConnLifetime = c.MaxConnLifetime
+	}
+	if c.MaxConnIdleTime > 0 {
+		cfg.MaxConnIdleTime = c.MaxConnIdleTime
+	}
+
+	// respeta ConnectTimeout usando el ctx
+	timeout := c.ConnectTimeout
+	if timeout <= 0 {
+		timeout = 5 * time.Second
+	}
+	ctxTimeout, cancel := context.WithTimeout(ctx, timeout)
+	defer cancel()
+
+	return pgxpool.NewWithConfig(ctxTimeout, cfg)
 }
 
 func getenv(key, def string) string {

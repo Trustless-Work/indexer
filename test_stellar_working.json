@@ -1,0 +1,32 @@
+{
+  "contractId": "CAX6NPDNS6TGN3Z6EXBZRQY3GAVTWEDG7EIJP3AEKQBCM3G2XVFT3VGW",
+  "contractBaseId": "CDBASECONTRACT789EXAMPLE456ABCDEF123GHIJKLMNOPQRSTUVWXYZ", 
+  "signer": "GASIGNER111111111111111111111111111111111111111111111111",
+  "engagementId": "stellar_working_test_001",
+  "title": "Working Stellar Contract Test",
+  "description": "Testing with a known working Hello World contract from Stellar docs",
+  "roles": {
+    "approver": "GAAPPROVER111111111111111111111111111111111111111111111",
+    "serviceProvider": "GASERVICE111111111111111111111111111111111111111111111",
+    "platformAddress": "GAPLATFORM111111111111111111111111111111111111111111111",
+    "releaseSigner": "GARELEASE111111111111111111111111111111111111111111111",
+    "disputeResolver": "GADISPUTE111111111111111111111111111111111111111111111",
+    "receiver": "GARECEIVER111111111111111111111111111111111111111111111"
+  },
+  "amountRaw": 2500000000,
+  "balanceRaw": 2500000000,
+  "amount": 2500000000,
+  "balance": 2500000000,
+  "platformFee": 150,
+  "milestones": [
+    {
+      "description": "Test milestone with known working Stellar Hello World contract"
+    }
+  ],
+  "trustline": {
+    "address": "CUSDC6STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 6,
+    "name": "USD Coin"
+  },
+  "receiverMemo": 9001
+}

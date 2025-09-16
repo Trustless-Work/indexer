@@ -18,7 +18,9 @@ type Client interface {
 	FetchDeposits(ctx context.Context, contractID string) ([]DepositEvent, error)
 }
 
-func NewHTTPClient(baseURL string) Client { return &httpClient{baseURL: baseURL} }
+func NewHTTPClient(baseURL string) Client { 
+	return NewSimpleStellarRPCClient(baseURL)
+}
 
 type httpClient struct{ baseURL string }
 

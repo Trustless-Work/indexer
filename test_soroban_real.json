@@ -1,0 +1,32 @@
+{
+  "contractId": "CACDYF3CYMJEJTIVFESQYZTN67GO2R5D5IUABTCUG3HXQSRXCSOROBAN",
+  "contractBaseId": "CDBASECONTRACT789EXAMPLE456ABCDEF123GHIJKLMNOPQRSTUVWXYZ", 
+  "signer": "GASIGNER111111111111111111111111111111111111111111111111",
+  "engagementId": "soroban_real_test_001",
+  "title": "Real Soroban Contract Test",
+  "description": "Testing with a real Soroban increment contract from testnet documentation",
+  "roles": {
+    "approver": "GAAPPROVER111111111111111111111111111111111111111111111",
+    "serviceProvider": "GASERVICE111111111111111111111111111111111111111111111",
+    "platformAddress": "GAPLATFORM111111111111111111111111111111111111111111111",
+    "releaseSigner": "GARELEASE111111111111111111111111111111111111111111111",
+    "disputeResolver": "GADISPUTE111111111111111111111111111111111111111111111",
+    "receiver": "GARECEIVER111111111111111111111111111111111111111111111"
+  },
+  "amountRaw": 10000000000,
+  "balanceRaw": 10000000000,
+  "amount": 10000000000,
+  "balance": 10000000000,
+  "platformFee": 200,
+  "milestones": [
+    {
+      "description": "Test milestone with real Soroban increment contract"
+    }
+  ],
+  "trustline": {
+    "address": "CUSDC6STELLARORG123456789ABCDEF123456789ABCDEF123456789",
+    "decimals": 6,
+    "name": "USD Coin"
+  },
+  "receiverMemo": 8001
+}
